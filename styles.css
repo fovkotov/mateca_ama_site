@@ -5,10 +5,12 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif; /* Используем шрифт Inter */
+    font-family: 'Inter', sans-serif;
     background-color: black;
     color: white;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@500&display=swap');
 
 .block {
     height: 100vh;
@@ -23,45 +25,39 @@ body {
 
 #block-2 {
     position: relative;
-    height: 300vh; /* Установлено на 300vh */
+    height: 300vh;
     display: flex;
-    justify-content: flex-start; /* Выравнивание по верхнему краю */
-    align-items: flex-start; /* Выравнивание по верхнему краю */
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .content-container {
     position: sticky;
-    top: 0; /* Позиционирование от верхней части */
+    top: 0;
     text-align: center;
-    width: 100%; /* Занимает всю ширину блока */
-    height: 100vh; /* Высота контента на весь экран */
-    overflow: hidden; /* Скрытие переполненного содержимого */
-}
-
-.svg-container {
     width: 100%;
-    height: auto;
-    margin: 0 auto;
+    height: 100vh;
+    overflow: hidden;
 }
 
+/* Обновленный стиль для треугольника */
 .triangle {
     width: 200%; /* Увеличенная ширина */
     height: auto;
     margin-left: -60%; /* Сдвиг влево */
-    margin-top: -10%; /* Сдвиг влево */
+    margin-top: -10%; /* Сдвиг вверх */
     transform: rotateY(10deg) perspective(1000px); /* Начальный наклон вправо */
     transition: transform 0.1s linear;
 }
 
 .text-container {
-    position: absolute; /* Фиксируем текст внизу */
-    bottom: 0; /* Прилепляем к низу */
-    margin-bottom: 20px; /* Небольшой отступ снизу */
-    transition: transform 0.5s ease; /* Плавный переход для текст-контейнера */
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
 }
 
 #text-wrapper {
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 h2, p {
@@ -69,13 +65,34 @@ h2, p {
     text-align: left;
 }
 
+/* Подзаголовок */
+#subheading {
+    color: var(--Text-Primary, rgba(255, 255, 255, 0.92));
+    font-family: "Inter Tight", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 122.222% */
+}
+
+/* Текст */
+#text {
+    color: var(--text-primary-48, rgba(255, 255, 255, 0.48));
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
+    letter-spacing: -0.064px;
+}
+
 .fade {
     opacity: 0;
-    transform: translateY(20px); /* Поднимаем текст вниз при скрытии */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный переход */
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .show {
     opacity: 1;
-    transform: translateY(0); /* Возвращаем текст в исходное положение */
+    transform: translateY(0);
 }
