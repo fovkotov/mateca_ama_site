@@ -1,19 +1,19 @@
 const headings = [
-    "Выстраиваем вдумчивую коммуникацию с клиентами",
-    "Понимаем уникальность каждого клиента и его задачи",
-    "Делаем все быстро, выгодно для клиента и надежно"
+    "Выстраиваем вдумчивую коммуникацию с клиентами",
+    "Понимаем уникальность каждого клиента и его задачи",
+    "Делаем все быстро, выгодно для клиента и надежно"
 ];
 
 const subheadings = [
-    "Думаем на шаг вперед",
-    "Понимаем уникальность каждого клиента и его задачи",
+    "Думаем на шаг вперед",
+    "Понимаем уникальность каждого клиента и его задачи",
     "Делаем все быстро, выгодно для клиента и надежно"
 ];
 
 const texts = [
-    "Постоянно обогащая знания о клиенте, предвосхищаем ожидания и отвечаем даже на те вопросы, которые еще не заданы",
-    "Не используем скрипты, ведем клиента от начала до конца задачи только с индивидуальным подходом",
-    "Оперативно находим решение, проверяем информацию и даем детальный ответ, включая стоимость предложений, доступных в открытых источниках — для сравнения с предложениями наших партнеров"
+    "Постоянно обогащая знания о клиенте, предвосхищаем ожидания и отвечаем даже на те вопросы, которые еще не заданы",
+    "Не используем скрипты, ведем клиента от начала до конца задачи только с индивидуальным подходом",
+    "Оперативно находим решение, проверяем информацию и даем детальный ответ, включая стоимость предложений, доступных в открытых источниках для сравнения с предложениями наших партнеров"
 ];
 
 let currentStep = 0;
@@ -23,14 +23,14 @@ window.addEventListener('scroll', () => {
     const block2OffsetTop = document.getElementById('block-2').offsetTop;
     const distanceScrolled = scrollY - block2OffsetTop;
 
-    const step = Math.min(Math.max(0, Math.floor(distanceScrolled / 600)), 2); // Скроллим на 600px
+    const step = Math.min(Math.max(0, Math.floor(distanceScrolled / 600)), 2);
 
     if (step !== currentStep) {
         currentStep = step;
         updateContent(currentStep);
     }
 
-    rotateTriangle(distanceScrolled);
+    rotateTriangles(distanceScrolled);
 });
 
 function updateContent(step) {
@@ -38,29 +38,34 @@ function updateContent(step) {
     const textElement = document.getElementById('text');
     const textContainer = document.querySelector('.text-container');
 
-    // Применяем класс fade для анимации
     subheadingElement.classList.add('fade');
     textElement.classList.add('fade');
-    textContainer.classList.add('fade'); // Добавляем fade для текст-контейнера
+    textContainer.classList.add('fade');
 
-    // Ждём завершения перехода, затем меняем текст
     setTimeout(() => {
         subheadingElement.textContent = subheadings[step];
         textElement.textContent = texts[step];
 
-        // Убираем класс fade и добавляем show для следующего перехода
         subheadingElement.classList.remove('fade');
         textElement.classList.remove('fade');
-        textContainer.classList.remove('fade'); // Убираем fade у текст-контейнера
-        subheadingElement.classList.add('show'); // Появление с анимацией
-        textElement.classList.add('show'); // Появление с анимацией
-    }, 500); // Задержка равна времени анимации
+        textContainer.classList.remove('fade');
+        subheadingElement.classList.add('show');
+        textElement.classList.add('show');
+    }, 500);
 }
 
-function rotateTriangle(scrollPosition) {
-    const maxRotation = 360; // Максимальный угол вращения
-    const rotationAngleX = (scrollPosition % 1800) * (maxRotation / 1800); // Вращение по X
-    const rotationAngleZ = (scrollPosition % 1800) * (maxRotation / 1800); // Вращение по Z
+function rotateTriangles(scrollPosition) {
+    const maxRotation = 360;
+    const rotationFactor = maxRotation / 1800;
+
     const triangle = document.querySelector('.triangle');
-    triangle.style.transform = `rotateX(230deg) rotateY(48deg) rotateZ(${rotationAngleZ}deg)`; // Вращение по Z
+    const bigTriangleRotationX = (scrollPosition % 1800) * rotationFactor;
+    const bigTriangleRotationZ = (scrollPosition % 1800) * rotationFactor;
+    triangle.style.transform = `rotateX(230deg) rotateY(48deg) rotateZ(${bigTriangleRotationZ}deg)`;
+
+    const smallTriangle = document.querySelector('.small-triangle');
+    const smallTriangleRotationX = (scrollPosition % 1800) * rotationFactor;
+    const smallTriangleRotationY = 2;
+    const smallTriangleRotationZ = (scrollPosition % 1800) * rotationFactor;
+    smallTriangle.style.transform = `rotateX(230deg) rotateY(48deg) rotateZ(${smallTriangleRotationZ}deg) translateX(-170px) translateY(-10px) translateZ(-114px) `;
 }

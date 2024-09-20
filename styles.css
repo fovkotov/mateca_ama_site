@@ -5,12 +5,10 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: black;
     color: white;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@500&display=swap');
 
 .block {
     height: 100vh;
@@ -40,50 +38,78 @@ body {
     overflow: hidden;
 }
 
-/* Обновленный стиль для треугольника */
 .triangle {
     width: 200%; /* Увеличенная ширина */
     height: auto;
-    margin-left: -60%; /* Сдвиг влево */
-    margin-top: -10%; /* Сдвиг вверх */
+    scale: 120%;
+    margin-left: -50%; /* Сдвиг влево */
+    margin-top: -5%; /* Сдвиг вверх */
     transform: rotateY(10deg) perspective(1000px); /* Начальный наклон вправо */
     transition: transform 0.1s linear;
+}
+
+.small-triangle {
+    width: 200%; /* Увеличенная ширина */
+    height: auto;
+    scale: 78%;
+    margin-left: -50%; /* Сдвиг влево */
+    margin-top: -190%; /* Сдвиг вверх */
+    transform: rotateY(10deg) perspective(1000px) ; /* Начальный наклон вправо */
+    transition: transform 0.1s linear;
+    mix-blend-mode: screen; /* Режим наложения */
 }
 
 .text-container {
     position: absolute;
     bottom: 0;
     margin-bottom: 20px;
+    transition: transform 0.5s ease;
 }
 
 #text-wrapper {
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease;
+    gap: 20px;
 }
 
-h2, p {
-    margin: 10px 16px;
-    text-align: left;
-}
-
-/* Подзаголовок */
-#subheading {
-    color: var(--Text-Primary, rgba(255, 255, 255, 0.92));
+h2 {
+    color: rgba(255, 255, 255, 0.92);
     font-family: "Inter Tight", sans-serif;
     font-size: 18px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 22px; /* 122.222% */
+    line-height: 22px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
-/* Текст */
-#text {
-    color: var(--text-primary-48, rgba(255, 255, 255, 0.48));
-    font-family: 'Inter', sans-serif;
+h1 {
+    color: rgba(255, 255, 255, 0.92);
+    font-family: "Inter Tight", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.fixed{
+    margin-top: 16px;
+    position: absolute;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.48);
+    font-family: "Inter", sans-serif;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 22px; /* 137.5% */
+    line-height: 22px;
     letter-spacing: -0.064px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: left;
 }
 
 .fade {
