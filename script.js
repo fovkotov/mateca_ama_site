@@ -59,8 +59,9 @@ function updateContent(step) {
 
 
 function rotateTriangle(scrollPosition) {
-    const maxRotation = 360;
-    const rotationAngle = (scrollPosition % 1800) * (maxRotation / 1800); // Учитываем увеличенный шаг скролла
+    const maxRotation = 360; // Максимальный угол вращения
+    const rotationAngleX = (scrollPosition % 1800) * (maxRotation / 1800); // Вращение по X
+    const rotationAngleZ = (scrollPosition % 1800) * (maxRotation / 1800); // Вращение по Z
     const triangle = document.querySelector('.triangle');
-    triangle.style.transform = `rotateX(${rotationAngle / 3}deg) rotateY(28deg)`; // Сохраняем наклон по Z
+    triangle.style.transform = `rotateX(${rotationAngleX / 3}deg) rotateY(28deg) rotateZ(${rotationAngleZ}deg)`; // Вращение по Z
 }

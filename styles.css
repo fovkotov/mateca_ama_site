@@ -35,18 +35,21 @@ body {
     text-align: center;
     width: 100%; /* Занимает всю ширину блока */
     height: 100vh; /* Высота контента на весь экран */
+    overflow: hidden;
 }
 
 .triangle {
     width: 0;
     height: 0;
     border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
+    border-right: 190px solid transparent;
     border-bottom: 660px solid white; /* Вытянутый вверх треугольник */
     margin: 0 auto;
     transform: rotateY(10deg) perspective(1000px); /* Начальный наклон вправо */
     transition: transform 0.5s ease;
+    overflow: hidden;
 }
+
 
 .text-container {
     position: absolute; /* Фиксируем текст внизу */
@@ -79,4 +82,8 @@ h2, p {
     bottom: 0; /* Прилепляем к низу */
     margin-bottom: 20px; /* Небольшой отступ снизу */
     transition: transform 0.5s ease; /* Плавный переход для текст-контейнера */
+}
+
+#block-3 {
+    background-color: lightgrey; /* Или другой цвет фона */
 }
