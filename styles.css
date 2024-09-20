@@ -62,3 +62,21 @@ h2, p {
     margin: 10px 16px;
     text-align: left;
 }
+
+.fade {
+    opacity: 0;
+    transform: translateY(20px); /* Поднимаем текст вниз при скрытии */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный переход */
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0); /* Возвращаем текст в исходное положение */
+}
+
+.text-container {
+    position: absolute; /* Фиксируем текст внизу */
+    bottom: 0; /* Прилепляем к низу */
+    margin-bottom: 20px; /* Небольшой отступ снизу */
+    transition: transform 0.5s ease; /* Плавный переход для текст-контейнера */
+}
