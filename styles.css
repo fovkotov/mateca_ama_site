@@ -50,7 +50,7 @@ body {
     margin-left: -60%; /* Сдвиг влево */
     margin-top: -10%; /* Сдвиг влево */
     transform: rotateY(10deg) perspective(1000px); /* Начальный наклон вправо */
-    transition: transform 0.5s ease;
+    transition: transform 0.1s linear;
 }
 
 .text-container {
