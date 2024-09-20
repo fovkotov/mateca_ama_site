@@ -41,6 +41,7 @@ body {
 .triangle {
     width: 200%; /* Увеличенная ширина */
     height: auto;
+    scale: 120%;
     margin-left: -50%; /* Сдвиг влево */
     margin-top: -5%; /* Сдвиг вверх */
     transform: rotateY(10deg) perspective(1000px); /* Начальный наклон вправо */
@@ -50,7 +51,7 @@ body {
 .small-triangle {
     width: 200%; /* Увеличенная ширина */
     height: auto;
-    scale: 68%;
+    scale: 78%;
     margin-left: -50%; /* Сдвиг влево */
     margin-top: -190%; /* Сдвиг вверх */
     transform: rotateY(10deg) perspective(1000px) ; /* Начальный наклон вправо */
