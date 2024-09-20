@@ -57,12 +57,10 @@ function updateContent(step) {
     }, 500); // Задержка равна времени анимации
 }
 
-
 function rotateTriangle(scrollPosition) {
     const maxRotation = 360; // Максимальный угол вращения
-    // const rotationAngleX = (scrollPosition % 1800) * (maxRotation / 1800); // Вращение по X
-    const rotationAngleY = (scrollPosition % 1800) * (maxRotation / 1800); // Вращение по X
+    const rotationAngleX = (scrollPosition % 1800) * (maxRotation / 1800); // Вращение по X
     const rotationAngleZ = (scrollPosition % 1800) * (maxRotation / 1800); // Вращение по Z
     const triangle = document.querySelector('.triangle');
-    triangle.style.transform = `rotateX(135deg) rotateY(${320 + rotationAngleY / 5}deg) rotateZ(${rotationAngleZ}deg)`; // Вращение по Z
+    triangle.style.transform = `rotateX(${rotationAngleX / 3}deg) rotateY(28deg) rotateZ(${rotationAngleZ}deg)`; // Вращение по Z
 }

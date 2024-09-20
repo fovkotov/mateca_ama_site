@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif; /* Используем шрифт Inter */
     background-color: black;
     color: white;
 }
@@ -35,26 +35,29 @@ body {
     text-align: center;
     width: 100%; /* Занимает всю ширину блока */
     height: 100vh; /* Высота контента на весь экран */
-    overflow: hidden;
+    overflow: hidden; /* Скрытие переполненного содержимого */
+}
+
+.svg-container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 
 .triangle {
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 190px solid transparent;
-    border-bottom: 660px solid white; /* Вытянутый вверх треугольник */
-    margin: 0 auto;
+    width: 200%; /* Увеличенная ширина */
+    height: auto;
+    margin-left: -60%; /* Сдвиг влево */
+    margin-top: -10%; /* Сдвиг влево */
     transform: rotateY(10deg) perspective(1000px); /* Начальный наклон вправо */
     transition: transform 0.5s ease;
-    overflow: hidden;
 }
-
 
 .text-container {
     position: absolute; /* Фиксируем текст внизу */
     bottom: 0; /* Прилепляем к низу */
     margin-bottom: 20px; /* Небольшой отступ снизу */
+    transition: transform 0.5s ease; /* Плавный переход для текст-контейнера */
 }
 
 #text-wrapper {
@@ -75,15 +78,4 @@ h2, p {
 .show {
     opacity: 1;
     transform: translateY(0); /* Возвращаем текст в исходное положение */
-}
-
-.text-container {
-    position: absolute; /* Фиксируем текст внизу */
-    bottom: 0; /* Прилепляем к низу */
-    margin-bottom: 20px; /* Небольшой отступ снизу */
-    transition: transform 0.5s ease; /* Плавный переход для текст-контейнера */
-}
-
-#block-3 {
-    background-color: lightgrey; /* Или другой цвет фона */
 }
