@@ -62,5 +62,5 @@ function rotateTriangle(scrollPosition) {
     const rotationAngleX = (scrollPosition % 1800) * (maxRotation / 1800); // Вращение по X
     const rotationAngleZ = (scrollPosition % 1800) * (maxRotation / 1800); // Вращение по Z
     const triangle = document.querySelector('.triangle');
-    triangle.style.transform = `rotateX(${rotationAngleX / 3}deg) rotateY(28deg) rotateZ(${rotationAngleZ}deg)`; // Вращение по Z
+    triangle.style.transform = `rotateX(230deg) rotateY(48deg) rotateZ(${rotationAngleZ}deg)`; // Вращение по Z
 }
