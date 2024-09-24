@@ -33,29 +33,29 @@ window.addEventListener('scroll', () => {
     rotateTriangle(distanceScrolled);
 });
 
-function updateContent(step) {
-    const subheadingElement = document.getElementById('subheading');
-    const textElement = document.getElementById('text');
-    const textContainer = document.querySelector('.text-container');
+// function updateContent(step) {
+//     const subheadingElement = document.getElementById('subheading');
+//     const textElement = document.getElementById('text');
+//     const textContainer = document.querySelector('.text-container');
 
-    // Применяем класс fade для анимации
-    subheadingElement.classList.add('fade');
-    textElement.classList.add('fade');
-    textContainer.classList.add('fade'); // Добавляем fade для текст-контейнера
+//     // Применяем класс fade для анимации
+//     subheadingElement.classList.add('fade');
+//     textElement.classList.add('fade');
+//     textContainer.classList.add('fade'); // Добавляем fade для текст-контейнера
 
-    // Ждём завершения перехода, затем меняем текст
-    setTimeout(() => {
-        subheadingElement.textContent = subheadings[step];
-        textElement.textContent = texts[step];
+//     // Ждём завершения перехода, затем меняем текст
+//     setTimeout(() => {
+//         subheadingElement.textContent = subheadings[step];
+//         textElement.textContent = texts[step];
 
-        // Убираем класс fade и добавляем show для следующего перехода
-        subheadingElement.classList.remove('fade');
-        textElement.classList.remove('fade');
-        textContainer.classList.remove('fade'); // Убираем fade у текст-контейнера
-        subheadingElement.classList.add('show'); // Появление с анимацией
-        textElement.classList.add('show'); // Появление с анимацией
-    }, 500); // Задержка равна времени анимации
-}
+//         // Убираем класс fade и добавляем show для следующего перехода
+//         subheadingElement.classList.remove('fade');
+//         textElement.classList.remove('fade');
+//         textContainer.classList.remove('fade'); // Убираем fade у текст-контейнера
+//         subheadingElement.classList.add('show'); // Появление с анимацией
+//         textElement.classList.add('show'); // Появление с анимацией
+//     }, 500); // Задержка равна времени анимации
+// }
 
 function rotateTriangle(scrollPosition) {
     const maxRotation = 360; // Максимальный угол вращения
